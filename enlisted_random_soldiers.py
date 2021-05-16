@@ -144,8 +144,10 @@ def print_levels_by_patch(pools):
             for level, count in pool[BY_LEVEL].items():
                 collected[level] = collected.get(level, 0) + count
             total_buys += pool[TOTAL_BUYS]
+        total_soldiers = sum(collected.values())
         print_subdict(collected, substring, print_average=True)
         print("  Total buys: %s" % total_buys)
+        print("  Average solders per buy: %.2f" % (total_soldiers / total_buys))
 
 
 def analyse():
