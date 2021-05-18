@@ -26,7 +26,7 @@ CLASSES = {
     "ra": "Radio Operator",
     "sn": "Sniper",
     "sx": "Sniper II",
-    "sx": "Sniper II",
+    "sy": "Sniper III",
     "ta": "Tanker",
     "tt": "Tanker II",
     "tr": "Trooper",
