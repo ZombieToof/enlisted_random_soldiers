@@ -1,6 +1,6 @@
-# Enlisted random soldiers
+# Enlisted random soldiers (and weapons)
 
-Analyze drop rates for random troop reinforcements in Enlisted (by class, level and number of soldiers). This is written to minimize the amount of input and the complexity of the script and is not intended to be pretty.
+Analyze drop rates for random troop reinforcements (by class, level and number of soldiers) and random weapon deliveries (weapon, normalized level and percent of pistol drops)in Enlisted. This is written to minimize the amount of input and the complexity of the script and is not intended to be pretty.
 
 ## Installation
 
@@ -9,14 +9,14 @@ This script is written for Python 3.9.5 and should be run with any Python 3 (and
 ```
 # Path/to/python enlisted_random_soldiers.py
 ```
-while in the directory that contains the csv file.
+while in the directory that contains the python file.
 
 
 ## Data Input
 
-The data is collected in `enlisted_random_soldiers.txt`. It is grouped in Pools that contain the currently available solder classes.
+The data is collected in `enlisted_random_soldiers.txt` and `enlisted_random_weapons.txt`. It is grouped in Pools that contain the currently available solder classes.
 
-Data is counted after line starting with "Pool". The line has to continue with the class codes for all classes in the pool, e.g. "Pool: as en sn ta". Each following line is 1 purchase and all soldier are written in the form `<2 letter class code><level>` separated by spaces. E.g. `ap2 en1 sn1` for "Attack Pilot II, Engineer1, Sniper1". The list of class codes is:
+Data is counted after line starting with "Pool". The line has to continue with the class codes for all classes in the pool, e.g. "Pool: as en sn ta". Each following line is 1 purchase and all soldier are written in the form `<class/weapon code><level>` separated by spaces. E.g. `ap2 en1 sn1` for "Attack Pilot II, Engineer1, Sniper1". The list of class codes is:
 
 ```
 CLASSES = {
@@ -43,7 +43,7 @@ CLASSES = {
     "tx": "Trooper II",
 }
 ```
-If a class code does not exist or is not listed in the "Pool: ..." title the script will throw and error.
+If a class code does not exist or is not listed in the "Pool: ..." title the script will throw an error.
 
 ## prepatch/postpatch
 
@@ -109,3 +109,4 @@ postpatch
 ## Changelog:
 
 * Convert data input from cvs to plain text
+* Add tracking of random weapon deliveries
