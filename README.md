@@ -14,7 +14,7 @@ while in the directory that contains the python file.
 
 ## Data Input
 
-The data is collected in `enlisted_random_soldiers.txt` and `enlisted_random_weapons.txt`. It is grouped in Pools that contain the currently available solder classes.
+The data is collected in `data/soldiers.txt` and `data/weapons.txt`. It is grouped in Pools that contain the currently available solder classes.
 
 Data is counted after line starting with "Pool". The line has to continue with the class codes for all classes in the pool, e.g. "Pool: as en sn ta". Each following line is 1 purchase and all soldier are written in the form `<class/weapon code><level>` separated by spaces. E.g. `ap2 en1 sn1` for "Attack Pilot II, Engineer1, Sniper1". The list of class codes is:
 
@@ -43,6 +43,7 @@ CLASSES = {
     "tx": "Trooper II",
 }
 ```
+
 If a class code does not exist or is not listed in the "Pool: ..." title the script will throw an error.
 
 ## prepatch/postpatch
@@ -110,3 +111,4 @@ postpatch
 
 * Convert data input from cvs to plain text
 * Add tracking of random weapon deliveries
+* Move data files to `data/weapons.txt` and `data/soldiers.txt`

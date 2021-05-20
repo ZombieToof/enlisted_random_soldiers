@@ -1,6 +1,8 @@
 from pprint import pprint
 
 import logging
+import os
+
 
 LOG_LEVEL = logging.WARNING
 # LOG_LEVEL = logging.DEBUG
@@ -230,9 +232,12 @@ def print_pistol_averages(pools):
     print("  Average: %.2f" % ((pistol_drops / total_buys) * 100))
     
 
+def get_data_file_path(filename):
+    return os.path.join(os.path.dirname(__file__), 'data', filename)
+    
 def analyse():
-    pairs = [["enlisted_random_soldiers.txt", CLASSES, "Soldiers", {}, False],
-             ["enlisted_random_weapons.txt", WEAPONS, "Weapons", WEAPON_LEVEL_CORRECTIONS, True],
+    pairs = [["soldiers.txt", CLASSES, "Soldiers", {}, False],
+             ["weapons.txt", WEAPONS, "Weapons", WEAPON_LEVEL_CORRECTIONS, True],
              ]
     for (filename, items, title, level_corretions, analyse_pistols) in pairs:
         analyse_file(filename, items, title, level_corretions, analyse_pistols)
@@ -241,7 +246,7 @@ def analyse():
 def analyse_file(filename, items, title, level_corrections, analyse_pistols):
     pools = {}
     pool = None
-    with open(filename, "r") as infile:
+    with open(get_data_file_path(filename), "r") as infile:
         for line in infile:
             line = line.strip()
             if not line or line.startswith("Campaign"):

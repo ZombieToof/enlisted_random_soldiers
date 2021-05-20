@@ -138,3 +138,31 @@ as2 en1
 ap1
 en2
 ex2 gu2
+
+
+Pool_postpatch: as at ap ax bo en ex fp fl gx mo ra sn sx sy ta tr tx
+gx1
+ax2 sx2 sn2
+gx1
+en1
+sx3 ex1 en1
+fl1
+sx2 sy2 ta1
+tx1 ta1
+bo1 sy1
+tx2
+ap2 bo1
+fp1
+ap3 fp3 gx2
+en2 at1 fl1
+tx2
+gx2 mo2 fp1
+bo2 ex1
+ra2 tx2
+en2
+sx3 ta2 ra1
+bo1 ax1 tr1
+fp1 ra1 sy1
+tr3
+sy1
+sy3 as1
