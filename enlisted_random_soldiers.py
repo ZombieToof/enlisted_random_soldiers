@@ -1,5 +1,3 @@
-import csv
-
 from pprint import pprint
 
 BY_CLASS = "by_class"
@@ -33,10 +31,42 @@ CLASSES = {
     "tx": "Trooper II",
 }
 
+WEAPONS = {
+    "fw35": "Flammenwerfer 35",
+    "gr36": "Granatwerfer 36",
+    "mg42": "MG 42",
+    "br30": "Breda Mod. 30",
+    "mg34": "MG 34",
+    "fg42": "FG 42",
+    "gw43": "Gewehr 43",
+    "mp35": "MP 35/I",
+    "be18": "Beretta M1918",
+    "fn43": "FNAB-43",
+    "mp34": "MP 38(o)",
+    "mp40": "MP 40",
+    "k98k": "Kar98k",
+    "k98l": "Kar98k with Schiessbecher grenade launcher",
+    "mann": "Mannlicher M1895",
+    "ma36": "MAS-36",
+    "fg4x": "FG 42 II",
+    "sg43": "Sniper Gewehr 43",
+    "k98s": "Kar98k with scope mount",
+    "stpi": "Sturmpistole",
+    "wp38": "Walther P38",
+    "p08l": "P08 Luger",
+    "wapp": "Walther PP",
+    "atxx": "Axe",
+}
+
 null_marker = object()
 
 
-def setup_pool(pool):
+def setup_pool(line, pools):
+    if line in pools:
+        raise AssertionError("Pool %s exists already")
+
+    pool = {"name": line}
+
     # setup pool data skeleton
     pool_classes = [c for c in pool["name"].split() if len(c) == 2]
     pool[POOL_CLASSES] = pool_classes
@@ -58,36 +88,20 @@ def setup_pool(pool):
     ]:
         pool[key] = dict([(entry, 0) for entry in entries])
 
-    return
+    pools[line] = pool
+    return pool
 
 
-def setup_pools(row, pools):
-    colindex = 0
-    for coltext in row:
-        if coltext.startswith("Pool"):
-            pools[colindex] = {"name": coltext}
-            setup_pool(pools[colindex])
-            colindex += 1
-
-
-def add_to_pool(coltext, pool):
-    print("Processing %s" % coltext)
-    received_soldiers = coltext.split()
+def add_to_pool(line, pool):
+    print("Processing %s" % line)
+    received_soldiers = line.split()
     pool[BY_COUNT][len(received_soldiers)] += 1
     pool[TOTAL_BUYS] += 1
     for soldier in received_soldiers:
-        soldier_class = soldier[0:2]
+        soldier_class = soldier[0:-1]
         pool[BY_CLASS][soldier_class] += 1
-        soldier_level = int(soldier[2])
+        soldier_level = int(soldier[-1])
         pool[BY_LEVEL][soldier_level] += 1
-
-
-def add_to_pools(row, pools):
-    colindex = 0
-    for coltext in row:
-        if coltext:
-            add_to_pool(coltext, pools[colindex])
-        colindex += 1
 
 
 def print_h1(h1):
@@ -152,18 +166,21 @@ def print_levels_by_patch(pools):
 
 def analyse():
     pools = {}
-    with open("enlisted_random_soldiers.csv", "r") as infile:
-        reader = csv.reader(infile)
-        for row in reader:
-            if not pools:
-                setup_pools(row, pools)
-            elif pools:
-                try:
-                    add_to_pools(row, pools)
-                except:
-                    pprint(pools)
-                    pprint(row)
-                    raise
+    pool = None
+    with open("enlisted_random_soldiers.txt", "r") as infile:
+        for line in infile:
+            line = line.strip()
+            if not line or line.startswith("Campaign"):
+                continue
+            if line.startswith("Pool"):
+                pool = setup_pool(line, pools)
+                continue
+            try:
+                add_to_pool(line, pool)
+            except:
+                pprint(pools)
+                pprint(line)
+                raise
 
     for pool in pools.values():
         print_pool(pool)

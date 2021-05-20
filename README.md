@@ -14,9 +14,9 @@ while in the directory that contains the csv file.
 
 ## Data Input
 
-The data is collected in `enlisted_random_soldiers.ods`. The script only reads `enlisted_random_solders.csv` so it has to be converted to an UTF-8 encoded csv file manually. Each column is a different drop pools so numbers are correctly calculated depending on the campaign and progress.
+The data is collected in `enlisted_random_soldiers.txt`. It is grouped in Pools that contain the currently available solder classes.
 
-In each column data is counted after a cell starting with "Pool" is counted. The cell has to continue with the class codes for all classes in the pool, e.g. "Pool: as en sn ta ...". Each following cell is 1 purchase and all soldier is written in the form `<2 letter class code><level>` separated by spaces. E.g. `ap2 en1 sn1` for "Attack Pilot II, Engineer1, Sniper1". The list of class codes is:
+Data is counted after line starting with "Pool". The line has to continue with the class codes for all classes in the pool, e.g. "Pool: as en sn ta". Each following line is 1 purchase and all soldier are written in the form `<2 letter class code><level>` separated by spaces. E.g. `ap2 en1 sn1` for "Attack Pilot II, Engineer1, Sniper1". The list of class codes is:
 
 ```
 CLASSES = {
@@ -105,3 +105,7 @@ postpatch
   Total buys: 35
   Average solders per buy: 2.03
 ```
+
+## Changelog:
+
+* Convert data input from cvs to plain text
