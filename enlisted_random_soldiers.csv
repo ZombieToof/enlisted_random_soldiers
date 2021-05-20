@@ -1,46 +1,46 @@
-Campaign: Moscow,,,
-Pool_prepatch: as ap bo en fp ra sn ta tr,Pool_prepatch: as ap bo en fp gu ra sn ta tr,Pool_postpatch: as ap bo en fp fl gu ra sn ta tr ,Pool_postpatch: as ap bo en fp gu ra sn ta tr
-sn1 as3,as1 gu1 fp1,fp2 ta2,ra2
-ra1 sn1,gu1 ta1,fp4,gu1 ra1
-bo1 bo4 sn1,as1,ta3 as1,bo2 ra1
-sn3,gu1 ra1 ta1,bo2 as1,en1 gu1 tr1
-ra1 tr1 fp1,tr1 ta1,fp1,ra3 as1 tr1
-en4 as1,bo1,sn2 fp1 ra1,fp1
-fp1,sn2 fp1,ta2 as1 as1,gu3 fp1
-en1 tr1 sn3,bo1 tr1 sn1,gu1 ta1,bo2 tr1 as1
-bo2,gu2 gu1 fp1,as1 en1 sn1,gu2 sn1
-ra1 fp2 ap1,ap4 ta3 bo1,en1 gu1 gu1,en2 gu1 ra1
-as2 sn1 fp1,bo1,fl1 fl1,gu2 sn1
-as2 en1,en1 sn1,en1,bo3 bo2 ra1
-ta1,tr1,fl1 tr1,
-sn4,fp1,as1,
-bo1,ap1 gu1,en2,
-as1 ra1 fp1,ra1,as2 ra1,
-ra1,bo3 fp3 sn1,ta1,
-en1 tr1,sn1,en4 en2,
-sn1,bo2 ap1,ta3,
-bo2 bo1,fp1,fp2 gu1 fp1,
-fp1,en2 bo1 ap1,as1,
-ap1,en1 en1,fp2 ta1,
-as1 as1,sn1,ra3 as1 fp1,
-ra3,gu1,,
-ap4 fp2,en2 tr1 ta1,,
-en2 tr1,as2,,
-bo2 ap1,gu2 tr1 ap1,,
-bo1 ra1,gu3 en1,,
-ap1,ta3 gu1 ta1,,
-tr2,fp2,,
-ra1 ap1 fp1,ap3 sn2 bo1,,
-tr1 ta1,gu1 sn1 fp1,,
-ra2 as1 sn1,en1 tr1,,
-,as2,,
-,ra2 ra1 fp1,,
-,as2 sn2 en1,,
-,gu2 as1,,
-,ra1,,
-,as2 bo1 as1,,
-,as2 sn2,,
-,fp3 as1,,
-,as2 sn2 ap2,,
-,ra1 sn1,,
-,sn3 bo1,,
+Campaign: Moscow,,,Campaign: Normandy,
+Pool_prepatch: as ap bo en fp ra sn ta tr,Pool_prepatch: as ap bo en fp gu ra sn ta tr,Pool_postpatch: as ap bo en fp gu ra sn ta tr,Pool_postpatch: as ap bo en fp fl gu ra sn ta tr ,Pool_postpatch: as at ap ax bo en ex fp fl gu mo ra sn sx sy ta tr tx 
+sn1 as3,as1 gu1 fp1,ra2,fp2 ta2,sn1
+ra1 sn1,gu1 ta1,gu1 ra1,fp4,sn2 sy1
+bo1 bo4 sn1,as1,bo2 ra1,ta3 as1,fp1
+sn3,gu1 ra1 ta1,en1 gu1 tr1,bo2 as1,sy3 bo1 ap1
+ra1 tr1 fp1,tr1 ta1,ra3 as1 tr1,fp1,ex1 mo1
+en4 as1,bo1,fp1,sn2 fp1 ra1,sy2 bo1
+fp1,sn2 fp1,gu3 fp1,ta2 as1 as1,tr1
+en1 tr1 sn3,bo1 tr1 sn1,bo2 tr1 as1,gu1 ta1,ta2 fp1 tr1
+bo2,gu2 gu1 fp1,gu2 sn1,as1 en1 sn1,tr1 gu1
+ra1 fp2 ap1,ap4 ta3 bo1,en2 gu1 ra1,en1 gu1 gu1,ra1 tx1
+as2 sn1 fp1,bo1,gu2 sn1,fl1 fl1,mo1 ra1
+as2 en1,en1 sn1,bo3 bo2 ra1,en1,as2 en1
+ta1,tr1,,fl1 tr1,ap1
+sn4,fp1,,as1,en2
+bo1,ap1 gu1,,en2,ex2 gu2
+as1 ra1 fp1,ra1,,as2 ra1,
+ra1,bo3 fp3 sn1,,ta1,
+en1 tr1,sn1,,en4 en2,
+sn1,bo2 ap1,,ta3,
+bo2 bo1,fp1,,fp2 gu1 fp1,
+fp1,en2 bo1 ap1,,as1,
+ap1,en1 en1,,fp2 ta1,
+as1 as1,sn1,,ra3 as1 fp1,
+ra3,gu1,,,
+ap4 fp2,en2 tr1 ta1,,,
+en2 tr1,as2,,,
+bo2 ap1,gu2 tr1 ap1,,,
+bo1 ra1,gu3 en1,,,
+ap1,ta3 gu1 ta1,,,
+tr2,fp2,,,
+ra1 ap1 fp1,ap3 sn2 bo1,,,
+tr1 ta1,gu1 sn1 fp1,,,
+ra2 as1 sn1,en1 tr1,,,
+,as2,,,
+,ra2 ra1 fp1,,,
+,as2 sn2 en1,,,
+,gu2 as1,,,
+,ra1,,,
+,as2 bo1 as1,,,
+,as2 sn2,,,
+,fp3 as1,,,
+,as2 sn2 ap2,,,
+,ra1 sn1,,,
+,sn3 bo1,,,
