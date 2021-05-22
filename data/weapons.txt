@@ -2,6 +2,7 @@ Campaign: Moscow
 
 Pool: fw35 gw36 mg42 br30 mg34 fg42 gw43 mp35 be18 fn43 mp34 mp40 k98k k98l mann ma36 fg4x sg43 k98s stpi z383 wp38 p08l wapp atxx
 
+2021-05-20
 gw431
 mp342
 ma362

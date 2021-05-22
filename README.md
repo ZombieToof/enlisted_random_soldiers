@@ -112,3 +112,4 @@ postpatch
 * Convert data input from cvs to plain text
 * Add tracking of random weapon deliveries
 * Move data files to `data/weapons.txt` and `data/soldiers.txt`
+* Allow and ignore lines with dates in the form "2021-05-21".

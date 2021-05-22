@@ -1,3 +1,4 @@
+from datetime import datetime
 from pprint import pprint
 
 import logging
@@ -5,7 +6,7 @@ import os
 
 
 LOG_LEVEL = logging.WARNING
-# LOG_LEVEL = logging.DEBUG
+LOG_LEVEL = logging.DEBUG
 
 
 log = logging.getLogger(__file__)
@@ -128,9 +129,18 @@ def setup_pool(line, pools, all_items):
     pools[line] = pool
     return pool
 
-
 def add_to_pool(line, pool, level_corrections):
     log.debug("Processing %s" % line)
+
+    # ignore dates
+    line = line.strip()
+    date = None
+    try:
+        date = datetime.strptime(line, "%Y-%m-%d")
+        return
+    except ValueError:
+        pass
+
     received_items = line.split()
     pool[BY_COUNT][len(received_items)] += 1
     pool[TOTAL_BUYS] += 1
@@ -234,7 +244,8 @@ def print_pistol_averages(pools):
 
 def get_data_file_path(filename):
     return os.path.join(os.path.dirname(__file__), 'data', filename)
-    
+
+
 def analyse():
     pairs = [["soldiers.txt", CLASSES, "Soldiers", {}, False],
              ["weapons.txt", WEAPONS, "Weapons", WEAPON_LEVEL_CORRECTIONS, True],
@@ -257,6 +268,7 @@ def analyse_file(filename, items, title, level_corrections, analyse_pistols):
             try:
                 add_to_pool(line, pool, level_corrections)
             except:
+                pprint("An error occured with the following pool and line")
                 pprint(pools)
                 pprint(line)
                 raise
